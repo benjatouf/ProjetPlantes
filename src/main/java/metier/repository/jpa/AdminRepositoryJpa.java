@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 import metier.model.Admin;
 import metier.repository.IAdminRepository;
 @Repository
-@Transactional(readOnly = true)
+@Transactional
 public class AdminRepositoryJpa implements IAdminRepository{
 	@PersistenceContext
 	private EntityManager em;
 	
 	@Override
 	public List<Admin> findAll() {
-		TypedQuery<Admin> query = em.createQuery("select m from Matiere m", Admin.class);
+		TypedQuery<Admin> query = em.createQuery("select m from Admin m", Admin.class);
 
 		return query.getResultList();
 	}
@@ -30,12 +30,11 @@ public class AdminRepositoryJpa implements IAdminRepository{
 	}
 
 	@Override
-	@Transactional(readOnly = false)
 	public Admin save(Admin obj) {
 		return em.merge(obj);
 	}
 
-	@Transactional(readOnly = false)
+	@Override
 	public void delete(Admin obj) {
 		em.remove(em.merge(obj));
 	}

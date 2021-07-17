@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("sopra.formation.repository.jpa")
+@ComponentScan("metier.repository.jpa")
 public class ApplicationConfig {
 
 	@Bean

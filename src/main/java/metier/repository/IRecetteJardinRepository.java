@@ -1,7 +1,7 @@
 package metier.repository;
 
-import metier.model.Recette;
+import metier.model.RecetteJardin;
 
-public interface IRecetteJardinRepository extends  IRepository<Recette,Long> {
+public interface IRecetteJardinRepository extends  IRepository<RecetteJardin,Long> {
 
 }
