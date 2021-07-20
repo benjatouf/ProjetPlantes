@@ -1,4 +1,4 @@
-package repository;
+package metier.repository;
 
 import java.util.List;
 
