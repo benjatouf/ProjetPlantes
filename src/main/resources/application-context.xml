@@ -16,7 +16,7 @@
 
 	<!-- Indiquer dans quel paquetage scanner pour trouver des annotations -->
 	<context:component-scan base-package="metier"/>
-
+	<jpa:repositories base-package="metier.repository"/>
 	<!-- On crée la dataSource via dbcp2 -->
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource">
